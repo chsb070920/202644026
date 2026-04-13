@@ -1,0 +1,17 @@
+num = 0
+sell_list = []
+sell_list2 = []
+while num<5:
+    sell = int(input('판매량 입력 : '))
+    num+=1
+    sell_list.append(sell)
+
+def find_outliers(sell_list):
+    average = sum(sell_list)/len(sell_list)
+    for i in sell_list:
+        if i>=average*1.5:
+            sell_list2.append(i)
+    return sell_list2
+
+result = find_outliers(sell_list)
+print('이상치 판매량 :', result) 
